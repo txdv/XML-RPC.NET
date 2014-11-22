@@ -11,11 +11,6 @@ namespace CookComputing.XmlRpc
         m_parseType = parseType;
       }
 
-      void Push(string str)
-      {
-        base.Push(str);
-      }
-
       public string MappingType
       {
         get { return m_parseType; }
