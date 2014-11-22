@@ -91,7 +91,6 @@ namespace CookComputing.XmlRpc
       // expect null in this case)
       if (valType != null && valType.BaseType == null)
         valType = null;
-      object ret = "";
 
       if (valueNode is StringValue && valueNode.ImplicitValue)
         CheckImplictString(valType, mappingStack);
@@ -252,7 +251,7 @@ namespace CookComputing.XmlRpc
         {
           throw;
         }
-        catch (Exception ex)
+        catch (Exception)
         {
           throw new XmlRpcInvalidEnumValue(mappingStack.MappingType
             + " contains invalid or out of range " + xmlRpcType + " value mapped to enum "
@@ -317,7 +316,7 @@ namespace CookComputing.XmlRpc
         {
           throw;
         }
-        catch (Exception ex)
+        catch (Exception)
         {
           throw new XmlRpcInvalidEnumValue(mappingStack.MappingType
             + " contains invalid or out of range " + xmlRpcType + " value mapped to enum "

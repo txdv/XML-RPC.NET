@@ -100,7 +100,6 @@ namespace CookComputing.XmlRpc
         }
         if (returnType == typeof(void) || !iter.MoveNext())
           return new XmlRpcResponse { retVal = null };
-        var valueNode = iter.Current as ValueNode;
         object retObj = MapValueNode(iter, returnType, new MappingStack("response"),
           MappingAction.Error);
         var response = new XmlRpcResponse { retVal = retObj };
